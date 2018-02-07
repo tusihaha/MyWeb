@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FortranWrapper</name>
+    </assembly>
+    <members>
+        <member name="T:FortranWrapper.ArrayExtensions">
+            <summary>
+            This class contains extension methods for arrays.
+            </summary>
+        </member>
+        <member name="M:FortranWrapper.ArrayExtensions.Transpose``1(``0[0:,0:])">
+            <summary>
+            Transposes a two-dimensional array.
+            </summary>
+            <typeparam name="T">The type of the array</typeparam>
+            <param name="array">The two-dimensional array to transpose</param>
+            <returns>Transposed array</returns>
+        </member>
+        <member name="T:FortranWrapper.ElasticModel">
+            <summary>
+            Implementation of <see cref="T:FortranWrapper.IElasticModel"/> and <see cref="T:System.ICloneable"/>.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.ElasticModel.BoreholeCondition">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.ElasticModel.WellboreGeometry">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.ElasticModel.StressGradients">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.ElasticModel.MechanicalProperties">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.ElasticModel.FailureProperties">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.ElasticModel.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.EnumExtensions.ToFortranCode(FortranWrapper.FailureCriterion)">
+            <summary>
+            Translates the failure criterion to the corresponding number in the Fortran dll.
+            </summary>
+            <param name="failureCriterion">The failure criterion to convert</param>
+            <returns>
+            The corresponding Fortran number for the failure criterion
+            </returns>
+        </member>
+        <member name="M:FortranWrapper.EnumExtensions.ToFortranCode(FortranWrapper.BoreholeCondition)">
+            <summary>
+            Translates the borehole condition to the corresponding number in the Fortran dll.
+            </summary>
+            <param name="boreholeCondition">The borehole condition to convert</param>
+            <returns>
+            The corresponding Fortran number for the borehole condition
+            </returns>
+        </member>
+        <member name="M:FortranWrapper.EnumExtensions.ToFortranCode(FortranWrapper.FailureMode)">
+            <summary>
+            Translates the failure mode to the corresponding number in the Fortran dll.
+            </summary>
+            <param name="failureMode">The failure mode to convert</param>
+            <returns>
+            The corresponding Fortran number for the failure mode
+            </returns>
+        </member>
+        <member name="T:FortranWrapper.BoreholeCondition">
+            <summary>
+            Defines the conditions of the borehole.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.BoreholeCondition.Impermeable">
+            <summary>
+            100% impermeable borehole wall. The formation pore fluid cannot exchange with drilling fluid in the wellbore.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.BoreholeCondition.Permeable">
+            <summary>
+            Permeable borehole wall. The formation pore fluid can freely exchange with drilling fluid in the wellbore.
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.FailureCriterion">
+            <summary>
+            Defines the failure criteria.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureCriterion.MohrCoulomb">
+            <summary>
+            Mohr-Coulomb criterion.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureCriterion.DruckerPrager">
+            <summary>
+            Drucker-Prager criterion.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureCriterion.ModifiedLade">
+            <summary>
+            Modified Lade criterion.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureCriterion.StassidAlia">
+            <summary>
+            Stassi d'Alia criterion.
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.FailureMode">
+            <summary>
+            Defines failure modes.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureMode.Collapse">
+            <summary>
+            Collapse mode.
+            </summary>
+        </member>
+        <member name="F:FortranWrapper.FailureMode.Fracturing">
+            <summary>
+            Fracturing mode.
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.FailureProperties">
+            <summary>
+            Implementation of <see cref="T:FortranWrapper.IFailureProperties"/> and <see cref="T:System.ICloneable"/>.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.FailureProperties.Cohesion">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.FailureProperties.FrictionAngle">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.FailureProperties.TensileStrength">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.FailureProperties.BreakOutAngle">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.FailureProperties.RadialRatio">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.FailureProperties.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:FortranWrapper.FortranDllOutput">
+            <summary>
+            This class contains raw output data resulted from invoking a Fortran dll.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.FortranDllOutput.ResultArray">
+            <summary>
+            Gets or sets the main array that contains the output from computing mudweight window, failure region or polar chart.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.FortranDllOutput.CriticalMudweightArray">
+            <summary>
+            Gets or sets the critical mudweight array.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.FortranDllOutput.CriticalMudweightFlagArray">
+            <summary>
+            Gets or sets the critical mudweight flag array.
+            </summary>
+            <remarks>
+            For each critical mudweight element in the <see cref="P:FortranWrapper.FortranDllOutput.CriticalMudweightArray"/> array, there is a flag in <see cref="P:FortranWrapper.FortranDllOutput.CriticalMudweightFlagArray"/>.
+            Possible values for a flag are listed below.
+            <ul>
+                <li>flag = 0: critical mudweight found.</li>
+                <li>flag = 1: critical mudweight not found. It is always stable.</li>
+                <li>flag = 2: critical mudweight not found. It always fails.</li>
+            </ul>
+            </remarks>
+        </member>
+        <member name="T:FortranWrapper.FortranDllService`1">
+            <summary>
+            Provides methods for computing various wellbore stability analyses.
+            </summary>
+            <typeparam name="T">A simulation model type such as <see cref="T:FortranWrapper.IElasticModel"/>.</typeparam>
+        </member>
+        <member name="M:FortranWrapper.FortranDllService`1.ComputeCollapseMudWeights(`0,FortranWrapper.FailureCriterion,FortranWrapper.IProgress{System.Int32},System.Int32)">
+            <summary>
+            Computes collapse mud weights.
+            </summary>
+            <param name="model">Simulation model contains parameters required for running.</param>
+            <param name="criterion">Failure criterion.</param>
+            <param name="progress">Provider for progress updates.</param>
+            <param name="progressInterval">Progress interval - number of data points processed in between two progress reports.</param>
+            <returns>An array of collapse mud weights sorted in the order of data points in <paramref name="model"/>. Unit: kg/m^3.</returns>
+            <example>
+            <code language="C#" title="Compute Collapse Mud Weights" source="..\UnitTest\ElasticUnitTest.cs" region="Elastic Collapse Mud Weights Example"/>
+            </example>
+        </member>
+        <member name="M:FortranWrapper.FortranDllService`1.ComputeFracturingMudWeights(`0,FortranWrapper.IProgress{System.Int32},System.Int32)">
+            <summary>
+            Computes fracturing mud weights.
+            </summary>
+            <param name="model">Simulation model contains parameters required for running.</param>
+            <param name="progress">Provider for progress updates.</param>
+            <param name="progressInterval">Progress interval - number of data points processed in between two progress reports.</param>
+            <returns>An array of fracturing mud weights sorted in the order of data points in <paramref name="model"/>. Unit: kg/m^3.</returns>
+            <example>
+            <code language="C#" title="Compute Fracturing Mud Weights" source="..\UnitTest\ElasticUnitTest.cs" region="Elastic Fracturing Mud Weights Example"/>
+            </example>
+        </member>
+        <member name="M:FortranWrapper.FortranDllService`1.GetDllVersion">
+            <summary>
+            Gets Fortran DLL version number.
+            </summary>
+            <returns>An integer representing the version number of the dll.</returns>
+        </member>
+        <member name="T:FortranWrapper.IElasticModel">
+            <summary>
+            Provides access to members that define elastic model.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IElasticModel.BoreholeCondition">
+            <summary>
+            Gets or sets borehole condition.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IElasticModel.WellboreGeometry">
+            <summary>
+            Gets or set wellbore geometry.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IElasticModel.StressGradients">
+            <summary>
+            Gets or sets stress gradients.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IElasticModel.MechanicalProperties">
+            <summary>
+            Gets or sets mechanical properties.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IElasticModel.FailureProperties">
+            <summary>
+            Gets or sets failure properties.
+            </summary>
+        </member>
+        <member name="M:FortranWrapper.IElasticModelExtensions.GetFloatParameters(FortranWrapper.IElasticModel,System.Int32)">
+            <summary>
+            Gets float parameters for the Fortran dll.
+            </summary>
+            <returns>
+            An array of float parameters that will be used as input parameters for the Fortran dll.
+            </returns>
+        </member>
+        <member name="T:FortranWrapper.IFailureProperties">
+            <summary>
+            Provides access to failure properties of a model.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IFailureProperties.Cohesion">
+            <summary>
+            Gets or sets the cohesion of the formation. Unit: Megapascal (MPa).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IFailureProperties.FrictionAngle">
+            <summary>
+            Gets or sets the friction angle of the formation. Unit: degree (deg).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IFailureProperties.TensileStrength">
+            <summary>
+            Gets or sets the tensile strength of the formation. Unit: Megapascal (MPa).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IFailureProperties.BreakOutAngle">
+            <summary>
+            Gets or sets the break out angle. Unit: degree (deg).
+            </summary>
+            <remarks>
+            Borehole breakout is the maximum size of a tolerable breakout. 
+            It is also called breakout angle, measured from the center of the borehole. 
+            Use of borehole breakout means allowing parts of the wellbore to fail plastically, resulting in a lower collapse mudweight.
+            </remarks>
+        </member>
+        <member name="P:FortranWrapper.IFailureProperties.RadialRatio">
+            <summary>
+            Gets or sets radial ratio.
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.IMechanicalProperties">
+            <summary>
+            Provides access to mechanical properties of a formation.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IMechanicalProperties.YoungModulusInIsotropicPlane">
+            <summary>
+            Gets or sets Young's modulus in isotropic plane. Unit: Megapascal (MPa).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IMechanicalProperties.YoungModulusInTransverseDirection">
+            <summary>
+            Gets or sets Young's modulus in transverse direction. Unit: Megapascal (MPa).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IMechanicalProperties.PoissonRatioInIsotropicPlane">
+            <summary>
+            Gets or sets Poisson's ratio in isotropic plane. Unit: NA (scalar).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IMechanicalProperties.PoissonRatioInTransverseDirection">
+            <summary>
+            Gets or sets Poisson's ratio in transverse direction. Unit: NA (scalar).
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.IProgress`1">
+            <summary>Defines a provider for progress updates.</summary>
+            <typeparam name="T">The type of progress update value.</typeparam>
+        </member>
+        <member name="M:FortranWrapper.IProgress`1.Report(`0)">
+            <summary>Reports a progress update.</summary>
+            <param name="value">The value of the updated progress.</param>
+        </member>
+        <member name="T:FortranWrapper.IStressGradients">
+            <summary>
+            Provides access to stress gradients.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IStressGradients.OverburdenStressGradient">
+            <summary>
+            Gets or sets the ratio of the weight of over-lying rock over the true vertical depth. Unit: kilopascal per meter (kPa/m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IStressGradients.MaxHorizontalStressGradient">
+            <summary>
+            Gets or sets the ratio of the maximum horizontal stress over the true vertical depth. Unit: kilopascal per meter (kPa/m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IStressGradients.MinHorizontalStressGradient">
+            <summary>
+            Gets or sets the ratio of the minimum horizontal stress over the true vertical depth. Unit: kilopascal per meter (kPa/m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IStressGradients.PorePressureGradient">
+            <summary>
+            Gets or sets the ratio of pore fluid pressure over the true vertical depth. Unit: kilopascal per meter (kPa/m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IStressGradients.MaxHorizontalStressAzimuth">
+            <summary>
+            Gets or sets the angle from the North direction to the maximum horizontal stress direction, in the North to East direction. Unit: degree (deg).
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.IWellboreGeometry">
+            <summary>
+            Provides access to wellbore geometry properties of a model.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IWellboreGeometry.TVD">
+            <summary>
+            Gets or sets the vertical distance from the ground surface (or rig floor or sea surface). Unit: meter (m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IWellboreGeometry.BoreholeRadius">
+            <summary>
+            Gets or sets the radius of the borehole. Unit: meter (m).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IWellboreGeometry.Inclination">
+            <summary>
+            Gets or sets the angle between the drill string and the vertical direction. Unit: degree (deg).
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.IWellboreGeometry.Azimuth">
+            <summary>
+            Gets or sets the angle from the North direction to the horizontal projection of the wellbore, in the North to East direction. Unit: degree (deg).
+            </summary>
+        </member>
+        <member name="T:FortranWrapper.MechanicalProperties">
+            <summary>
+            Implementation of <see cref="T:FortranWrapper.IMechanicalProperties"/> and <see cref="T:System.ICloneable"/>.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.MechanicalProperties.YoungModulusInIsotropicPlane">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.MechanicalProperties.YoungModulusInTransverseDirection">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.MechanicalProperties.PoissonRatioInIsotropicPlane">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.MechanicalProperties.PoissonRatioInTransverseDirection">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.MechanicalProperties.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:FortranWrapper.Progress`1">
+            <summary>
+            Provides an IProgress{T} that invokes callbacks for each reported progress value.
+            </summary>
+            <typeparam name="T">Specifies the type of the progress report value.</typeparam>
+            <remarks>
+            Any handler provided to the constructor is invoked through a 
+            <see cref="T:System.Threading.SynchronizationContext"/> instance captured
+            when the instance is constructed.  If there is no current SynchronizationContext
+            at the time of construction, the callbacks will be invoked on the ThreadPool.
+            </remarks>
+        </member>
+        <member name="F:FortranWrapper.Progress`1.m_synchronizationContext">
+            <summary>The synchronization context captured upon construction.  This will never be null.</summary>
+        </member>
+        <member name="F:FortranWrapper.Progress`1.m_handler">
+            <summary>The handler specified to the constructor.  This may be null.</summary>
+        </member>
+        <member name="F:FortranWrapper.Progress`1.m_invokeHandlers">
+            <summary>A cached delegate used to post invocation to the synchronization context.</summary>
+        </member>
+        <member name="M:FortranWrapper.Progress`1.#ctor">
+            <summary>Initializes the <see cref="T:FortranWrapper.Progress`1"/>.</summary>
+        </member>
+        <member name="M:FortranWrapper.Progress`1.#ctor(System.Action{`0})">
+            <summary>Initializes the <see cref="T:FortranWrapper.Progress`1"/> with the specified callback.</summary>
+            <param name="handler">
+            A handler to invoke for each reported progress value. 
+            Depending on the <see cref="T:System.Threading.SynchronizationContext"/> instance captured by 
+            the <see cref="T:FortranWrapper.Progress`1"/> at construction, it's possible that this handler instance
+            could be invoked concurrently with itself.
+            </param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="handler"/> is null (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="M:FortranWrapper.Progress`1.OnReport(`0)">
+            <summary>Reports a progress change.</summary>
+            <param name="value">The value of the updated progress.</param>
+        </member>
+        <member name="M:FortranWrapper.Progress`1.FortranWrapper#IProgress{T}#Report(`0)">
+            <summary>Reports a progress change.</summary>
+            <param name="value">The value of the updated progress.</param>
+        </member>
+        <member name="M:FortranWrapper.Progress`1.InvokeHandlers(System.Object)">
+            <summary>Invokes the action and event callbacks.</summary>
+            <param name="state">The progress value.</param>
+        </member>
+        <member name="T:FortranWrapper.ProgressStatics">
+            <summary>Holds static values for <see cref="T:FortranWrapper.Progress`1"/>.</summary>
+            <remarks>This avoids one static instance per type T.</remarks>
+        </member>
+        <member name="F:FortranWrapper.ProgressStatics.DefaultContext">
+            <summary>A default synchronization context that targets the ThreadPool.</summary>
+        </member>
+        <member name="T:FortranWrapper.StressGradients">
+            <summary>
+            Implementation of <see cref="T:FortranWrapper.IStressGradients"/> and <see cref="T:System.ICloneable"/>.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.StressGradients.OverburdenStressGradient">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.StressGradients.MaxHorizontalStressGradient">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.StressGradients.MinHorizontalStressGradient">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.StressGradients.PorePressureGradient">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.StressGradients.MaxHorizontalStressAzimuth">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.StressGradients.Clone">
+            <inheritdoc/>
+        </member>
+        <member name="T:FortranWrapper.WellboreGeometry">
+            <summary>
+            Implementation of <see cref="T:FortranWrapper.IWellboreGeometry"/> and <see cref="T:System.ICloneable"/>.
+            </summary>
+        </member>
+        <member name="P:FortranWrapper.WellboreGeometry.Azimuth">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.WellboreGeometry.Inclination">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.WellboreGeometry.BoreholeRadius">
+            <inheritdoc/>
+        </member>
+        <member name="P:FortranWrapper.WellboreGeometry.TVD">
+            <inheritdoc/>
+        </member>
+        <member name="M:FortranWrapper.WellboreGeometry.Clone">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
